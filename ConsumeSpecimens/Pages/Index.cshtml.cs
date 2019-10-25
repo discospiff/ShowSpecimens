@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
 using QuickType;
 
 namespace ConsumeSpecimens.Pages
@@ -24,9 +26,22 @@ namespace ConsumeSpecimens.Pages
             using (var webClient = new WebClient())
             {
                 String jsonString = webClient.DownloadString("https://www.plantplaces.com/perl/mobile/viewspecimenlocations.pl?Lat=39.14455075&Lng=-84.5093939666667&Range=0.5&Source=location&Version=2");
-                Welcome welcome = Welcome.FromJson(jsonString);
-                List<Specimen> specimens = welcome.Specimens;
-                ViewData["Specimens"] = specimens;
+                JSchema schema = JSchema.Parse(System.IO.File.ReadAllText("SpecimenSchema.json"));
+                JObject jsonObject = JObject.Parse(jsonString);
+                IList<string> validationEvents = new List<string>();
+                if (jsonObject.IsValid(schema, out validationEvents))
+                {
+                    Welcome welcome = Welcome.FromJson(jsonString);
+                    List<Specimen> specimens = welcome.Specimens;
+                    ViewData["Specimens"] = specimens;
+                } else
+                {
+                    foreach(string evt in validationEvents)
+                    {
+                        Console.WriteLine(evt);
+                    }
+                    ViewData["Specimens"] = new List<Specimen>();
+                }
                 
             }
         }
