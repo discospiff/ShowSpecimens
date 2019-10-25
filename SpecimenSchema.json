@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome",
+  "definitions": {
+    "Welcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "specimens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Specimen"
+          }
+        }
+      },
+      "required": [
+        "specimens"
+      ],
+      "title": "Welcome"
+    },
+    "Specimen": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        },
+        "plant_id": {
+          "type": "integer"
+        },
+        "specimen_id": {
+          "type": "integer"
+        },
+        "common": {
+          "type": "string"
+        },
+        "genus": {
+          "type": "string"
+        },
+        "species": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "address",
+        "common",
+        "genus",
+        "lat",
+        "lng",
+        "notes",
+        "plant_id",
+        "species",
+        "specimen_id"
+      ],
+      "title": "Specimen"
+    }
+  }
+}
