@@ -25,6 +25,26 @@ namespace ConsumeSpecimens.Pages
         {
             using (var webClient = new WebClient())
             {
+
+                String key = System.IO.File.ReadAllText("WeatherAPIKey.txt");
+                String weatherString = webClient.DownloadString("https://api.weatherbit.io/v2.0/current?&city=Cincinnati&country=USA&key=" + key);
+                QuickTypeWeather.Welcome welcomeWeather = QuickTypeWeather.Welcome.FromJson(weatherString);
+                long precip = 0;
+                foreach(QuickTypeWeather.Datum weather in welcomeWeather.Data)
+                {
+                    precip = weather.Precip;
+                }
+                if (precip < 1)
+                {
+                    ViewData["WeatherMessage"] = "Water your plants!";
+                }
+                IDictionary<long, QuickTypePlants.Welcome> allPlants = new Dictionary<long, QuickTypePlants.Welcome>();
+                String plantsJSON = webClient.DownloadString("http://plantplaces.com/perl/mobile/viewplantsjsonarray.pl?WetTolerant=on");
+                QuickTypePlants.Welcome[] welcomePlants = QuickTypePlants.Welcome.FromJson(plantsJSON);
+                foreach(QuickTypePlants.Welcome plant in welcomePlants)
+                {
+                    allPlants.Add(plant.Id, plant);
+                }
                 String jsonString = webClient.DownloadString("https://www.plantplaces.com/perl/mobile/viewspecimenlocations.pl?Lat=39.14455075&Lng=-84.5093939666667&Range=0.5&Source=location&Version=2");
                 JSchema schema = JSchema.Parse(System.IO.File.ReadAllText("SpecimenSchema.json"));
                 JObject jsonObject = JObject.Parse(jsonString);
@@ -33,16 +53,24 @@ namespace ConsumeSpecimens.Pages
                 {
                     Welcome welcome = Welcome.FromJson(jsonString);
                     List<Specimen> specimens = welcome.Specimens;
-                    ViewData["Specimens"] = specimens;
-                } else
+                    List<Specimen> waterMeSpecimens = new List<Specimen>();
+                    foreach(Specimen specimen in specimens)
+                    {
+                        if (allPlants.ContainsKey(specimen.PlantId)) 
+                        {
+                            waterMeSpecimens.Add(specimen);
+                        }
+                     }
+                    ViewData["Specimens"] = waterMeSpecimens;
+                }
+                else
                 {
-                    foreach(string evt in validationEvents)
+                    foreach (string evt in validationEvents)
                     {
                         Console.WriteLine(evt);
                     }
                     ViewData["Specimens"] = new List<Specimen>();
                 }
-                
             }
         }
     }
