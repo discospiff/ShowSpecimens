@@ -1,0 +1,6 @@
+The mechanics of the review are good: branch, pull request, etc.
+
+Very nice writeup.
+
+
+Extracting CSS to an external file is a great idea... but it looks like this reviewer did not commit that new file.   With the file, I'd merge these changes.  Without the file, I would not.

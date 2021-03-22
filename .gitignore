@@ -339,5 +339,5 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-#Weather API Key, which should be kept private
+#Weather API Key
 WeatherAPIKey.txt

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="plants.xsl"?>
+<hort:plant xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:hort="http://www.plantplaces.com/Plant"
+	xsi:schemaLocation="http://www.plantplaces.com/Plant plants.xsd">
+	<!-- All payload data belongs here -->
+	<hort:genus>Cercis</hort:genus> 
+	<hort:species>canadensis</hort:species>
+	<hort:common_name>Eastern Redbud</hort:common_name>
+	<hort:height>25</hort:height>
+	<hort:begin_bloom_date>2017-03-15</hort:begin_bloom_date>
+	<hort:end_bloom_date>2017-03-30</hort:end_bloom_date>
+	<hort:edible>true</hort:edible>
+	<hort:sun_tolerance>full_sun</hort:sun_tolerance>
+	<hort:bloom_color>violet</hort:bloom_color>
+	<hort:specimens>		
+		<hort:specimen>
+			<hort:latitude>39.47</hort:latitude>
+			<hort:longitude>-84.51</hort:longitude>
+			<hort:planted_by>Brandan Jones</hort:planted_by>
+			<hort:comments>Beautiful tree!</hort:comments>
+		</hort:specimen>
+		<hort:specimen>
+			<hort:latitude>52.40</hort:latitude>
+			<hort:longitude>1.00</hort:longitude>
+			<hort:planted_by>Joe Bloggs</hort:planted_by>
+			<hort:comments>RBG Kew</hort:comments>
+		</hort:specimen>		
+		<hort:specimen>
+			<hort:latitude>-22.50</hort:latitude>
+			<hort:longitude>-68.25</hort:longitude>
+			<hort:planted_by>Guillermo Sanchez</hort:planted_by>
+			<hort:comments>Lovely Specimen!</hort:comments>
+		</hort:specimen>		
+		<hort:specimen>
+			<hort:latitude>-25.50</hort:latitude>
+			<hort:longitude>38.25</hort:longitude>
+			<hort:planted_by>Dave Jones</hort:planted_by>
+			<hort:comments>wonderful Specimen!</hort:comments>
+		</hort:specimen>	
+	</hort:specimens>
+</hort:plant>

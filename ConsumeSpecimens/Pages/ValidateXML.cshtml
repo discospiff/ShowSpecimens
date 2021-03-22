@@ -1,0 +1,12 @@
+﻿@page
+@model ConsumeSpecimens.Pages.ValidateXMLModel
+@{
+    ViewData["Title"] = "ValidateXML";
+}
+
+<h1>ValidateXML</h1>
+<form method="post" enctype="multipart/form-data">
+    <input type="file" asp-for="Upload" />
+    <input type="submit" />
+</form>
+

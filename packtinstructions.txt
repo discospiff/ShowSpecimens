@@ -1,0 +1,37 @@
+Hi Brandan,
+
+Good morning! Hope you're doing great!
+
+Lesson 1 is locked down and ready for you to record. Please find attached the same.
+
+Please record only exercise 1 as a sample. I will review it and provide feedback accordingly. 
+
+You can find the codes uploaded here: https://github.com/PacktWorkshops/The-Android-Workshop/tree/master/Chapter01
+
+Request you to please review the exercises along with the codes first. If you find any discrepancies, please email me the same. I will take it up with the concerned team.
+
+Once done recording, place the video here: https://drive.google.com/drive/u/2/folders/1VXWD8M72ZN8kJMk2UEzqwsuF90hgwPqv
+
+Kindly note the below guidelines while recording an exercise:
+The exercises and activities will be standalone ones meaning that it should in itself be self-explanatory about the concepts that it covers.
+These exercises should not be referred with number but just names and you should not refer to any other exercise in the book while recording any particular exercise. 
+Avoid calling out exercise numbers on screen too.
+The notebook should not be pre-loaded. All code cells should be executed while explaining each cell
+
+Secondly, every exercise should be divided into three parts: 
+
+Introduction (Include name of the exercise, reference/one-line explanation of the concepts covered, exercise objective)
+Exercise Body (The main exercise and its steps, codes, any note/caution/tip for the exercise)
+Summary (Exercise summary or what new was learned in the exercise)
+
+Lastly, this will be a guided learning course, so the tone should be that of an enthusiastic instructor. For other technical details, please refer to the video recording guidelines shared earlier.
+
+
+In addition to this, I have also provided sample videos here.
+
+
+Let me know if you have queries regarding this.
+
+
+
+It would be great if you could share exercise 1 by 17th June.
